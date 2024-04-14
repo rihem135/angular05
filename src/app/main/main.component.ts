@@ -141,7 +141,8 @@ export class MainComponent implements OnInit {
 
 
   nouveauPassword(): void {
-    if (!this.nouveauPasswordObj.email || !this.nouveauPasswordObj.code || !this.nouveauPasswordObj.password) {
+    this.nouveauPasswordObj.email = this.modifierPaddwordObj.email.toString();
+    if ( !this.nouveauPasswordObj.code || !this.nouveauPasswordObj.password) {
       this.message3 = 'Veuillez remplir tous les champs.';
      
       return; // Interrompt l'exécution de la fonction si un champ est vide
@@ -226,7 +227,13 @@ export class MainComponent implements OnInit {
         next: (response) => {
           this.message4 = response;
           if (this.message4!=="Adresse e-mail incorrecte" && this.message4!=="Mot de passe incorrect" && this.message4!=="Problème d'authentification" && this.message4!=="Échec de l'authentification"    ){
-                localStorage.setItem('token',response)
+            const troisiemeGuillemet = response.indexOf('"', response.indexOf('"', response.indexOf('"') + 1) + 1);
+            const quatriemeGuillemet = response.indexOf('"', troisiemeGuillemet + 1);
+            const resultat = response.substring(troisiemeGuillemet + 1, quatriemeGuillemet);
+            
+
+               this.userService.saveToken(resultat)
+    
                 
               
                 this.isUserLoggedIn=true;

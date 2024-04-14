@@ -1,10 +1,41 @@
-import { Component } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  donnee: donnee = new donnee();
+  constructor(private http: HttpClient, private userService: UserService){}
 
+  ngOnInit(): void {
+    const httpOptions: { headers: HttpHeaders, responseType: 'json' } = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json' // Définir le type de contenu JSON
+      }),
+      responseType: 'json' // Spécifier le type de réponse JSON
+    };
+
+    this.http.get<any>('http://localhost:8082/get', httpOptions).subscribe(
+      (response) => {
+       
+        this.donnee.email = response.email;
+        this.donnee.adresse = response.adresse;
+        this.donnee.telephone = response.telephone;
+        
+        
+      },
+      err => console.error(err)
+    );
+  }
 }
+export class donnee{
+
+  email:String='';
+  adresse:String='';
+  telephone:String='';
+}
+

@@ -8,6 +8,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CalenderComponent } from './calender/calender.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { ManualPartComponent } from './manual-part/manual-part.component';
+import { LoginGoogleComponent } from './login-google/login-google.component';
+import { DetailsEventComponent } from './details-event/details-event.component';
+import { MapsComponent } from './maps/maps.component';
+import { CapteursComponent } from './capteurs/capteurs.component';
 
 
 const routes: Routes = [
@@ -17,10 +22,15 @@ const routes: Routes = [
   {path :"sidenav" , component :SidenavComponent},
   {path :"calender" , component :CalenderComponent},
   {path :"statistics" , component :StatisticsComponent},
+  {path :"google" , component :LoginGoogleComponent},
+  {path :"details" , component :DetailsEventComponent},
+  {path :"maps" , component :MapsComponent},
+  {path:'chat/:userId', component:CapteursComponent},
   
  
 
 {path :"mounir" , component :MounirComponent},
+{path :"manual_part" , component :ManualPartComponent},
 {path:"acceuil" , component : AcceuilComponent},
 {path:"navbar" , component : NAVBARComponent},
 {path:"dashboard", component : DashboardComponent},

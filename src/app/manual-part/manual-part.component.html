@@ -1,0 +1,27 @@
+<div class="inscription-form">
+    <h2>Gestion des évenements</h2>
+    <form > <!--(submit)="submitForm()"-->
+       
+        <br>
+        <label>
+            Titre d'évenement:
+            <input type="text" name="your-lname" [(ngModel)]="evenementObj.title"  required><!--[(ngModel)]="formData.lastName"-->
+        </label>
+        <br>
+        <label>
+            Début de l'évenement:
+            <input type="datetime-local" name="your-email" [(ngModel)]="evenementObj.start"   required><!--[(ngModel)]="formData.email"-->
+        </label>
+        <br>
+      
+        <br>
+        <label>
+            Fin de l'évenement:
+            <input  type="datetime-local"  name="your-password"   [(ngModel)]="evenementObj.end"  required><!--[(ngModel)]="formData.password"-->
+        </label>
+        <div *ngIf="message4" class="message-success">{{ message4 }}</div>
+        
+        <br>
+        <button type="submit" (click)="AjouterEvent()">Ajouter</button>
+    </form>
+</div>

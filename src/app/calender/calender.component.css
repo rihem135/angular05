@@ -1,0 +1,44 @@
+#cal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Espacement en bas des boutons */
+  }
+  
+  button {
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    padding: 8px 15px; /* Réduire le padding pour affiner les boutons */
+    cursor: pointer;
+    font-size: 14px; /* Taille de police réduite */
+    font-weight: 400; /* Poids de la police réduit */
+  }
+  
+  button:hover {
+    background-color: #3EB489; /* Couleur plus claire au survol */
+  }
+  
+  #cal-date-nav-buttons,
+  #cal-view-nav-buttons {
+    display: flex;
+    align-items: center; /* Centrer verticalement les boutons */
+    gap: 10px; /* Espacement entre les boutons */
+  }
+  
+  #cal-date-field {
+    font-size: 16px; /* Taille de police légèrement plus grande */
+    margin-bottom: 10px;
+  }
+  
+  /* Ajoutez des styles supplémentaires selon vos besoins */
+  /* Ajout de media queries pour rendre les boutons responsive */
+@media screen and (max-width: 768px) {
+  #cal-buttons {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #cal-view-nav-buttons {
+      margin-top: 10px; /* Espacement des boutons en dessous */
+  }
+}

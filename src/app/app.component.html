@@ -1,12 +1,12 @@
 <ng-container *ngIf="isUserLoggedIn">
     <!-- Afficher le contenu après connexion réussie -->
-    <app-sidenav (onToggleSideNav)="onToggLeSideNav($event)"></app-sidenav>
-    <app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidht"></app-body>
+<app-sidenav></app-sidenav>
+<app-body></app-body>
     
 <!-- DZDZDZ -->
 <!-- DZDZDZ -->
 </ng-container>
   <ng-container *ngIf="!isUserLoggedIn">
-    <!-- Afficher le contenu après connexion réussie -->
   <app-navbar></app-navbar>
+  
   </ng-container>

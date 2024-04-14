@@ -21,7 +21,7 @@ export class AppComponent  implements OnInit{
   isSideNavCollapsed = false;
   screenWidht= 0;
   a:boolean=false;
-  isUserLoggedIn:boolean=false;
+  isUserLoggedIn:boolean=true;
   l:boolean=false;
   @ViewChild(MainComponent) mainComponent!: MainComponent;
   @ViewChild(NAVBARComponent) navbarComponent!: NAVBARComponent; // Accédez au composant NavbarComponent
@@ -37,11 +37,23 @@ export class AppComponent  implements OnInit{
    
     // Injectez le MainComponent
   ) { }
-  ngOnInit(): void {
+  ngOnInit(): void {  
+    
+
+
     this.userService.isUserLoggedIn$.subscribe((isLoggedIn: boolean) => {
       this.isUserLoggedIn = isLoggedIn;
     });
     console.log(this.isUserLoggedIn);
+  
+   
+    
+    
+    
+
+   
+    
+   
   
    
   }
@@ -52,13 +64,6 @@ export class AppComponent  implements OnInit{
     this.screenWidht = data.screenWidht;
     this.isSideNavCollapsed = data.collapsed;
   }
-
-callConnection1(): void {
-  if (this.mainComponent) {
-      this.mainComponent.connection1(this.l); // Appel de la méthode connection()
-  }
-
-}
 
 
 

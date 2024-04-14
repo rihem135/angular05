@@ -7,8 +7,14 @@ export const navbarData =[
     {
         routeLink: 'calender',
         icon:'fal fa-calendar',
-        label:'calender'
+        label:'calendar'
     },
+    {
+        routeLink: 'weather',
+        icon:'fal fa-cloud',
+        label:'weather'
+    },
+
     {
         routeLink: 'statistics',
         icon:'fal fa-chart-bar',
@@ -20,24 +26,14 @@ export const navbarData =[
         label:'manual_part'
     },
     {
-        routeLink: 'profile',
-        icon:'fal fa-user',
-        label:'profile'
+        routeLink: 'maps',
+        icon:'fas fa-map-marker-alt',
+        label:'maps'
     },
     {
         routeLink: 'notification',
         icon:'fal fa-bell',
         label:'notification'
-    },
-    {
-        routeLink: 'settings',
-        icon:'fal fa-cog',
-        label:'settings'
     }
-
-
-
-
-
-    
+   
 ];

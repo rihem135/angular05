@@ -1,7 +1,15 @@
+
+<div class="green-bar " >
+ <div class ="aa" (click)="openModel()" >
+    <i class=" fas fa-user"></i> 
+     <div class=" text-right">{{donnee.nom}}</div>
+    
+    </div></div> 
+
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">L</button><!--remplace L par mon logo-->
-        <div class="logo-text" @fadeInOut *ngIf="collapsed">Rihem</div><!--remplacerrihem par nom de site-->
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">SmartFarm</div><!--remplacerrihem par nom de site-->
         <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
         </button>
@@ -13,8 +21,10 @@
                 <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
             </a>
         </li>
+        <li class="sidenav-nav-item1" *ngFor="let data of outData">
+            <a class="sidenav-nav-link1" [routerLink]="[data.routeLink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="logout-icon" [class]="data.icon"></i>
+                <span class="sidenav-link-text-logout" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+            </a>
+        </li>
     </ul>
-</div>
-<!-- component.html -->
-
-

@@ -1,3 +1,44 @@
+ .green-bar {
+    background-color: #32CD32;
+    height: 46px; /* Hauteur de votre barre verte */
+    width: 100%; /* S'étend sur toute la largeur */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Assure que la barre verte est en avant-plan */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .green-bar .aa {
+    display: flex;
+    align-items: center;
+}
+
+.green-bar .aa:hover i,
+.green-bar .aa:hover .text-right {
+    color: #28a928;
+    cursor: default;
+}
+
+
+.green-bar .aa i {
+    margin-right: 8px; /* Ajustez la marge selon votre besoin */
+}
+
+  
+  
+  .text-right {
+    margin-right: 40px; /* Marge à droite pour espacer le texte du bord */
+    color: white;
+    font-size: 26px;
+}
+.fa-user {
+    margin-left: 10px; /* Marge à gauche pour espacer l'icône du texte */
+    color: white;
+    font-size: 20px;
+}
 .sidenav {
     background-color: #32CD32;
     transition: all .5s ease;
@@ -6,7 +47,7 @@
     top: 0;
     width: 5rem;
     height: 100vh;
-    box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
+   
 }
 .logo-container{
     display: flex;
@@ -93,12 +134,56 @@
         color: #000;
        } 
     }
+
+
+    .sidenav-nav-item1{
+        width: 100%;
+        margin-bottom: 0.625rem;
+        margin-top: 140px;
+
+        .sidenav-nav-link1{
+            display: flex;
+            align-items: center;
+            height: 3rem;
+            color: #f3f3f3;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: all .3s ease;
+
+            .logout-icon{
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+
+
+            }
+
+            .sidenav-link-text-logout{
+                margin-left: 1.5rem;
+                
+            }
+        }
+    }
+    .sidenav-nav-item1:hover{
+        .sidenav-nav-link1{
+         background-color: #fff;
+         color: #000;
+        } 
+     }
+
 }
 .active{
     background-color: #fff;
 
     .sidenav-link-icon,
-    .sidenav-link-text{
+    .sidenav-link-text,
+    .logout-icon,
+    .sidenav-link-text-logout
+    {
         color: #000;
     }
 }
+
+
