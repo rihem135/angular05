@@ -1,12 +1,1 @@
-<ng-container *ngIf="isUserLoggedIn">
-    <!-- Afficher le contenu après connexion réussie -->
-<app-sidenav></app-sidenav>
-<app-body></app-body>
-    
-<!-- DZDZDZ -->
-<!-- DZDZDZ -->
-</ng-container>
-  <ng-container *ngIf="!isUserLoggedIn">
-  <app-navbar></app-navbar>
-  
-  </ng-container>
+<router-outlet></router-outlet>

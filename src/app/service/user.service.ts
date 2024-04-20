@@ -11,6 +11,7 @@ import { CalendarEvent } from 'angular-calendar';
 export class UserService {
   private isUserLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   public isUserLoggedIn$: Observable<boolean> = this.isUserLoggedInSubject.asObservable();
+  userRole: string="";
 
   constructor(private http: HttpClient) { }
   
@@ -19,8 +20,8 @@ export class UserService {
     return this.http.get<any[]>("https://jsonplaceholder.typicode.com/users");}
 
  
-  login(connectionObj: any): Observable<string> {
-    return this.http.post('http://localhost:8082/connexion', connectionObj, { responseType: 'text' });
+  login(connectionObj: any): Observable<any> {
+    return this.http.post('http://localhost:8082/connexion', connectionObj); //, { responseType: 'text' }
   }
   ModifierProfil(ProfilObj: any): Observable<string> {
     return this.http.post('http://localhost:8082/modifier', ProfilObj, { responseType: 'text' });
@@ -39,6 +40,16 @@ export class UserService {
       })))
     );
   }
+
+
+
+//extraire token et role de reponse texte
+  extractTokenAndRole(response: any): { token: string, role: string } {
+    return {
+      token: response.token,
+      role: response.role
+    };
+  }
   
 
 
@@ -46,19 +57,41 @@ export class UserService {
     this.isUserLoggedInSubject.next(value);
     
   }
+  //save token besh nesta3melha fi main.ts
   saveToken(token:string):void{
-    localStorage.setItem('token',token)
+    // Supprimer les accolades du token avant de l'enregistrer
+    const tokenWithoutBraces = token.replace(/^{([^{}]*)}$/, '$1');
+    localStorage.setItem('token',tokenWithoutBraces)
   }
+
+  ////save role besh nesta3melha fi main.ts ????
+  saveRole(role: string): void {
+    localStorage.setItem('role', role);
+  }
+  
+
   isLogged(): boolean{
     const token =localStorage.getItem('token')
     console.log(token)
-    return !! token 
+    return token !== null && token !== undefined;
+
+    //return !! token 
   }
+
   clearToken(): void{
     localStorage.removeItem('token')
   }
+  //get de token min localstorage
   getToken(): String |null{
     return localStorage.getItem('token')
+  }
+  //get role  ??
+  getRole(): string | null {
+    return localStorage.getItem('role');
+  }
+
+  getUserRole(): string {
+    return this.userRole;
   }
 
 }

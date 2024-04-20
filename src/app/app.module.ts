@@ -35,6 +35,8 @@ import { LoginGoogleComponent } from './login-google/login-google.component';
 import { DetailsEventComponent } from './details-event/details-event.component';
 import { MapsComponent } from './maps/maps.component';
 import { CapteursComponent } from './capteurs/capteurs.component';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
@@ -72,6 +74,8 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
     DetailsEventComponent,
     MapsComponent,
     CapteursComponent,
+    HomeComponent,
+    AdminComponent,
     
   
   ],

@@ -1,8 +1,8 @@
 export const navbarData =[
     {
-        routeLink: 'dashboard',
+        routeLink: 'home',
         icon:'fal fa-home',
-        label:'Dashboard'
+        label:'home'
     },
     {
         routeLink: 'calender',
